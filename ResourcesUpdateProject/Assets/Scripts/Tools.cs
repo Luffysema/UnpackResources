@@ -179,6 +179,9 @@ public class Tools
             throw;
         }
         s.Close();
+#if !UNITY_IOS
+        File.Delete(m_ZipPath); //解压完之后删除压缩包
+#endif
     }
 
     /// <summary>
